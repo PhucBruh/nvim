@@ -1,0 +1,10 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "http",
+        "path": "./http.json"
+      }
+    ]
+  }
+}

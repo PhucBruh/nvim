@@ -154,15 +154,14 @@ require("lualine").setup {
     },
     lualine_b = {},
     lualine_c = {
-      filename,
+      {
+        "filename",
+        path = 1,
+        status = true,
+      },
       filetype,
       branch,
       diff,
-      {
-        require("noice").api.statusline.mode.get,
-        cond = require("noice").api.statusline.mode.has,
-        color = { fg = "#ed8796" },
-      },
     },
     lualine_x = {},
     lualine_y = {

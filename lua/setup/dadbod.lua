@@ -26,6 +26,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+---@Key-DadbobUI
 map("n", "<leader><Tab>o", dbui_focus, { noremap = true, silent = true, desc = "Focus Dadbod" })
 map("n", "<leader><Tab>e", dbui_toggle, { noremap = true, silent = true, desc = "Toggle Dadbod" })
 map("n", "<leader><Tab>n", ":DBUIAddConnection<CR>", { noremap = true, silent = true, desc = "Add connection" })

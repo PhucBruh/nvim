@@ -12,11 +12,6 @@ return {
       "DBUIAddConnection",
       "DBUIFindBuffer",
     },
-    keys = {
-      "<leader><Tab>o",
-      "<leader><Tab>e",
-      "<leader><Tab>a",
-    },
     init = function() require "setup.dadbod" end,
   },
 

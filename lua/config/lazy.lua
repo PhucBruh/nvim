@@ -47,4 +47,3 @@ require("lazy").setup {
 
 require "config.general"
 require "config.keymaps"
-require "config.postconfig"

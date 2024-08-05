@@ -30,17 +30,17 @@ return {
       "hrsh7th/cmp-buffer", -- Buffer source for nvim-cmp
       "hrsh7th/cmp-path", -- Path source for nvim-cmp
       "hrsh7th/cmp-cmdline", -- Cmdline source for nvim-cmp
-      "onsails/lspkind.nvim", --Better look
+
+      -- for luasnip and preset snippets
+      "saadparwaiz1/cmp_luasnip",
+      "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets",
+
       "kristijanhusak/vim-dadbod-completion", -- For db support
+
+      "onsails/lspkind.nvim", --Better look
     },
     config = function() require "setup.cmp" end,
-  },
-
-  {
-    "L3MON4D3/LuaSnip",
-    event = { "InsertEnter", "CmdlineEnter" },
-    dependencies = { "rafamadriz/friendly-snippets" },
-    config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
   },
 
   {

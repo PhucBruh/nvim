@@ -1,4 +1,6 @@
 return {
+
+  ---@Plug-tools-database
   -- Database
   {
     "kristijanhusak/vim-dadbod-ui",
@@ -15,6 +17,7 @@ return {
     init = function() require "setup.dadbod" end,
   },
 
+  ---@Plug-tools-'kulala'
   -- HTTP REST-Client Interface
   {
     "mistweaverco/kulala.nvim",
@@ -22,7 +25,8 @@ return {
     config = function() require "setup.kulala" end,
   },
 
-  -- Markdown support
+  ---@Plug-tools-markdown
+  -- Markdown render and editor support
   {
     "MeanderingProgrammer/markdown.nvim",
     ft = "markdown",

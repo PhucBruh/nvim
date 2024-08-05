@@ -1,5 +1,6 @@
 return {
 
+  ---@Plug-editor-hop
   -- Search and jump engine in buffer
   {
     "phaazon/hop.nvim",
@@ -7,6 +8,7 @@ return {
     config = function() require("hop").setup {} end,
   },
 
+  ---@Plug-editor-telescope
   -- fuzzy finder over lists for neovim
   {
     "nvim-telescope/telescope.nvim",
@@ -16,12 +18,15 @@ return {
     },
   },
 
+  ---@Plug-editor-autopairs
+  -- auto pairs
   {
     "windwp/nvim-autopairs",
     event = { "InsertEnter", "CmdlineEnter" },
     config = true,
   },
 
+  ---@Plug-editor-complete
   {
     "hrsh7th/nvim-cmp", -- Completion plugin
     event = { "InsertEnter", "CmdlineEnter" },
@@ -43,12 +48,37 @@ return {
     config = function() require "setup.cmp" end,
   },
 
+  ---@Plug-editor-comment
   {
     "numToStr/Comment.nvim",
   },
 
+  ---@Plug-editor-comment
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+
+  ---@Plug-editor-'nvim-ufo'
+  -- For folding stuff
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "BufRead",
+    dependencies = { "kevinhwang91/promise-async" },
+    config = function() require "setup.ufo" end,
+  },
+
+  ---@Plug-editor-'better-escape'
+  {
+    "max397574/better-escape.nvim",
+    event = "VeryLazy",
+    opts = {
+      timeout = 300,
+      default_mappings = false,
+      mappings = {
+        i = { j = { k = "<Esc>", j = "<Esc>" } },
+      },
+    },
   },
 }

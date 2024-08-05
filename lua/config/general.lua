@@ -3,8 +3,7 @@ local opt = vim.opt
 -- Left column and similar settings
 opt.number = true -- display line numbers
 opt.relativenumber = true -- display relative line numbers
-opt.numberwidth = 3 -- set width of line number column
-opt.signcolumn = "yes" -- always show sign column
+opt.numberwidth = 2 -- set width of line number column
 opt.wrap = false -- display lines as single line
 opt.scrolloff = 10 -- number of lines to keep above/below cursor
 opt.sidescrolloff = 8 -- number of columns to keep to the left/right of cursor
@@ -23,7 +22,6 @@ vim.g.loaded_netrwPlugin = 1
 opt.backup = false -- disable backup file creation
 opt.clipboard = "unnamedplus" -- enable system clipboard access
 opt.conceallevel = 0 -- so that `` is visible in markdown files
---opt.fileencoding = "utf-8"    -- set file encoding to UTF-8
 opt.mouse = "a" -- enable mouse support
 opt.showmode = false -- hide mode display
 opt.splitbelow = true -- force horizontal splits below current window

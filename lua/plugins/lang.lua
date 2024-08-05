@@ -1,4 +1,6 @@
 return {
+
+  ---@Plug-lang-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -21,6 +23,7 @@ return {
     end,
   },
 
+  ---@Plug-lang-mason
   -- Mason integration with LSPConfig
   {
     "williamboman/mason-lspconfig.nvim",
@@ -39,11 +42,10 @@ return {
   -- LSPConfig for configuring LSP servers
   {
     "neovim/nvim-lspconfig",
-    -- "SmiteshP/nvim-navic",
-    -- dependencies = { "neovim/nvim-lspconfig" },
     config = function() require "setup.lsp.lspconfig" end,
   },
 
+  ---@Plug-lang-conform
   -- Formatter config
   {
     "stevearc/conform.nvim",

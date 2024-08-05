@@ -23,67 +23,6 @@ require("catppuccin").setup {
         Search = { bg = colors.mauve, fg = colors.base },
         TreesitterContextBottom = { sp = colors.overlay1, style = { "underline" } },
         WinSeparator = { fg = colors.surface1, style = { "bold" } },
-
-        -- Better markdown code block compat w/ mini.hues
-        KazCodeBlock = { bg = colors.crust },
-
-        -- Mini customizations
-        MiniClueDescGroup = { fg = colors.pink },
-        MiniClueDescSingle = { fg = colors.sapphire },
-        MiniClueNextKey = { fg = colors.text, style = { "bold" } },
-
-        MiniFilesCursorLine = { fg = nil, bg = colors.surface1, style = { "bold" } },
-        MiniFilesFile = { fg = colors.overlay2 },
-        MiniFilesTitleFocused = { fg = colors.peach, style = { "bold" } },
-
-        -- Highlight patterns for highlighting the whole line and hiding colon.
-        -- See https://github.com/echasnovski/mini.nvim/discussions/783
-        MiniHipatternsFixmeBody = { fg = colors.red, bg = colors.base },
-        MiniHipatternsFixmeColon = { bg = colors.red, fg = colors.red, style = { "bold" } },
-        MiniHipatternsHackBody = { fg = colors.yellow, bg = colors.base },
-        MiniHipatternsHackColon = { bg = colors.yellow, fg = colors.yellow, style = { "bold" } },
-        MiniHipatternsNoteBody = { fg = colors.sky, bg = colors.base },
-        MiniHipatternsNoteColon = { bg = colors.sky, fg = colors.sky, style = { "bold" } },
-        MiniHipatternsTodoBody = { fg = colors.teal, bg = colors.base },
-        MiniHipatternsTodoColon = { bg = colors.teal, fg = colors.teal, style = { "bold" } },
-
-        MiniIndentscopeSymbol = { fg = colors.sapphire },
-
-        MiniJump = { fg = colors.mantle, bg = colors.pink },
-        MiniJump2dSpot = { fg = colors.peach },
-        MiniJump2dSpotAhead = { fg = colors.mauve },
-        MiniJump2dSpotUnique = { fg = colors.peach },
-
-        MiniMapNormal = { fg = colors.overlay2, bg = colors.mantle },
-
-        MiniPickBorderText = { fg = colors.blue },
-        MiniPickMatchCurrent = { fg = nil, bg = colors.surface1, style = { "bold" } },
-        MiniPickMatchRanges = { fg = colors.text, style = { "bold" } },
-        MiniPickNormal = { fg = colors.overlay2 },
-        MiniPickPrompt = { fg = colors.mauve },
-
-        MiniStarterInactive = { fg = colors.overlay0, style = {} },
-        MiniStarterItem = { fg = colors.overlay2, bg = nil },
-        MiniStarterItemBullet = { fg = colors.surface2 },
-        MiniStarterItemPrefix = { fg = colors.text },
-        MiniStarterQuery = { fg = colors.text, style = { "bold" } },
-        MiniStarterSection = { fg = colors.mauve, style = { "bold" } },
-
-        MiniStatuslineDirectory = { fg = colors.overlay1, bg = colors.surface0 },
-        MiniStatuslineFilename = { fg = colors.text, bg = colors.surface0, style = { "bold" } },
-        MiniStatuslineFilenameModified = { fg = colors.blue, bg = colors.surface0, style = { "bold" } },
-        MiniStatuslineInactive = { fg = colors.overlay1, bg = colors.surface0 },
-
-        MiniSurround = { fg = nil, bg = colors.yellow },
-
-        MiniTablineCurrent = { fg = colors.blue, bg = colors.base, style = { "bold" } },
-        MiniTablineFill = { bg = colors.mantle },
-        MiniTablineHidden = { fg = colors.overlay1, bg = colors.surface0 },
-        MiniTablineModifiedCurrent = { fg = colors.base, bg = colors.blue, style = { "bold" } },
-        MiniTablineModifiedHidden = { fg = colors.base, bg = colors.subtext0 },
-        MiniTablineModifiedVisible = { fg = colors.base, bg = colors.subtext0, style = { "bold" } },
-        MiniTablineTabpagesection = { fg = colors.base, bg = colors.mauve, style = { "bold" } },
-        MiniTablineVisible = { fg = colors.overlay1, bg = colors.surface0, style = { "bold" } },
       }
       for _, hl in ipairs { "Headline", "rainbow" } do
         for i, c in ipairs { "blue", "pink", "lavender", "green", "peach", "flamingo" } do
@@ -132,13 +71,8 @@ vim.api.nvim_set_hl(0, "YankHighlight", {
   blend = 20, -- Optional: adjust the transparency (0-100)
 })
 
--- Autocmd to clear the highlight after a delay (optional)
-vim.api.nvim_exec(
-  [[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * lua vim.highlight.on_yank {higroup="YankHighlight", timeout=150}
-  augroup END
-]],
-  false
-)
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+  pattern = "*",
+  callback = function() vim.highlight.on_yank { higroup = "YankHighlight", timeout = 150 } end,
+})

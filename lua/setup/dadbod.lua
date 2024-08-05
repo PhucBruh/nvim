@@ -21,8 +21,9 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "dbui",
   callback = function()
     vim.wo.foldenable = false
-    vim.wo.foldcolumn = "1"
+    vim.wo.foldcolumn = "0"
     vim.wo.winbar = nil
+    vim.wo.number = false
   end,
 })
 

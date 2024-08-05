@@ -1,4 +1,6 @@
 return {
+
+  ---@Plug-UI-'alpha-nvim'
   -- dashboard intro
   {
     "goolord/alpha-nvim",
@@ -8,6 +10,7 @@ return {
     config = function() require "setup.alpha" end,
   },
 
+  ---@Plug-UI-'nvim-tree'
   -- file explorer
   {
     "nvim-tree/nvim-tree.lua",
@@ -15,20 +18,15 @@ return {
     config = function() require "setup.nvim-tree" end,
   },
 
+  ---@Plug-UI-'nvim-web-devicons'
   -- more icons
   {
     "nvim-tree/nvim-web-devicons",
     opts = function() require "setup.nvim-web-devicons" end,
   },
 
-  -- just colorscheme
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function() vim.cmd.colorscheme "tokyonight" end,
-  -- },
-
+  ---@Plug-UI-catppuccin
+  -- just a theme
   {
     "catppuccin/nvim",
     lazy = false,
@@ -37,9 +35,11 @@ return {
     config = function() require "setup.catpuccin" end,
   },
 
+  ---@Plug-UI-lualine
   -- status line
   {
     "nvim-lualine/lualine.nvim",
+    event = "BufRead",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "letieu/harpoon-lualine",
@@ -51,6 +51,27 @@ return {
     config = function() require "setup.lualine" end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "WinLeave",
+    main = "ibl",
+    config = function() require("ibl").setup() end,
+  },
+
+  ---@Plug-UI-statuscol
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "WinLeave",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  {
+    "luukvbaal/statuscol.nvim",
+    branch = "0.10",
+    config = function() require "setup.statuscol" end,
+  },
+
+  ---@Plug-UI-noice
   -- for notification and some ui
   {
     "folke/noice.nvim",
@@ -62,24 +83,17 @@ return {
     config = function() require "setup.noice" end,
   },
 
+  ---@Plug-UI-'nvim-highlight-colors'
   -- highlight color
   {
     "brenoprata10/nvim-highlight-colors",
     config = function() require("nvim-highlight-colors").setup {} end,
   },
 
+  ---@Plug-UI-'which-key'
   -- keybind descripion
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-  },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
   },
 }

@@ -1,5 +1,5 @@
 local opts = {
-  filters = { dotfiles = true },
+  filters = { dotfiles = false },
   disable_netrw = true,
   hijack_cursor = true,
   sync_root_with_cwd = true,
@@ -10,6 +10,7 @@ local opts = {
   view = {
     width = 30,
     preserve_window_proportions = true,
+    signcolumn = "no",
   },
   renderer = {
     root_folder_label = false,

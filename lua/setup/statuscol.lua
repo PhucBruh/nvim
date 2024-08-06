@@ -21,8 +21,6 @@ require("statuscol").setup {
 
   bt_ignore = {
     "nofile",
-    "NvimTree",
-    "terminal",
   },
   segments = {
     {

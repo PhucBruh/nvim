@@ -10,12 +10,6 @@ return {
     config = function() require "setup.alpha" end,
   },
 
-  -- {
-  --   "nvim-zh/colorful-winsep.nvim",
-  --   config = true,
-  --   event = { "WinLeave" },
-  -- },
-
   ---@Plug-UI-catppuccin
   -- just a theme
   {
@@ -72,7 +66,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "j-hui/fidget.nvim",
+      "rcarriga/nvim-notify",
     },
     config = function() require "setup.noice" end,
   },

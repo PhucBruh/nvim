@@ -31,7 +31,7 @@ map("n", "<leader>fd", builtin.diagnostics, { desc = "Find diagnostics" })
 map("n", "<leader>fo", builtin.oldfiles, { desc = "Find recent files" })
 map("n", "<leader>ft", find_themes, { desc = "Find themes" })
 map("n", "<leader>f/", builtin.current_buffer_fuzzy_find, { desc = "Find words in current buffer" })
---map("n", "<leader>fn", telescope.extensions.notify.notify, { desc = "Find notification" })
+map("n", "<leader>fn", require("telescope").extensions.notify.notify, { desc = "Find notification" })
 
 ---@Key-comment
 local comment = require "Comment.api"
@@ -42,7 +42,6 @@ map("v", "<leader>/", comment.call("toggle.linewise", "g@"), { expr = true, desc
 map("n", "gd", vim.lsp.buf.definition, { expr = true, desc = "Show the definition of current symbol" })
 map("n", "gD", vim.lsp.buf.declaration, { expr = true, desc = "Declaration of current symbol" })
 
----@Key-Nvimtree
-vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree toggle window" })
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree focus window" })
-vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Oil" })
+---@Key-explorer
+map({ "n", "i" }, "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree toggle window" })
+map({ "n", "i" }, "<C-o>", "<cmd>Oil<CR>", { desc = "Oil" })

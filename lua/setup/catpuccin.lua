@@ -56,7 +56,7 @@ require("catppuccin").setup {
       subtext0 = "#8E94AB",
       overlay2 = "#7D8296",
       overlay1 = "#676B80",
-      overlay0 = "#464957",
+      overlay0 = "#6c7a93",
       surface2 = "#3A3D4A",
       surface1 = "#2F313D",
       surface0 = "#1D1E29",

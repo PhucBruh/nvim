@@ -23,6 +23,9 @@ require("catppuccin").setup {
         Search = { bg = colors.mauve, fg = colors.base },
         TreesitterContextBottom = { sp = colors.overlay1, style = { "underline" } },
         WinSeparator = { fg = colors.surface1, style = { "bold" } },
+
+        AlphaHeader = { fg = colors.mauve, style = { "italic", "bold" } },
+        AlphaFooter = { fg = colors.rosewater, style = {} },
       }
       for _, hl in ipairs { "Headline", "rainbow" } do
         for i, c in ipairs { "blue", "pink", "lavender", "green", "peach", "flamingo" } do
@@ -66,7 +69,7 @@ require("catppuccin").setup {
 
 vim.cmd.colorscheme "catppuccin-macchiato"
 vim.api.nvim_set_hl(0, "YankHighlight", {
-  bg = "#ff9900", -- Change this to your desired background color
+  bg = "#FF8F40", -- Change this to your desired background color
   fg = "#ffffff", -- Change this to your desired foreground color (text color)
   blend = 20, -- Optional: adjust the transparency (0-100)
 })
@@ -76,3 +79,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function() vim.highlight.on_yank { higroup = "YankHighlight", timeout = 150 } end,
 })
+
+vim.api.nvim_set_hl(0, "Visual", { bg = "#4a5c6b" })

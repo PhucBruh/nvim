@@ -14,16 +14,26 @@ return {
   -- file explorer
   {
     "nvim-tree/nvim-tree.lua",
+    version = "*",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function() require "setup.nvim-tree" end,
   },
 
   ---@Plug-UI-'nvim-web-devicons'
   -- more icons
   {
-    "nvim-tree/nvim-web-devicons",
+    "nvim-sree/nvim-web-devicons",
     opts = function() require "setup.nvim-web-devicons" end,
   },
+
+  -- {
+  --   "nvim-zh/colorful-winsep.nvim",
+  --   config = true,
+  --   event = { "WinLeave" },
+  -- },
 
   ---@Plug-UI-catppuccin
   -- just a theme
@@ -52,10 +62,13 @@ return {
   },
 
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "WinLeave",
-    main = "ibl",
-    config = function() require("ibl").setup() end,
+    "huy-hng/anyline.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = true,
+    event = "VeryLazy",
+    opts = {
+      animation = "none",
+    },
   },
 
   ---@Plug-UI-statuscol
@@ -78,7 +91,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      "j-hui/fidget.nvim",
     },
     config = function() require "setup.noice" end,
   },

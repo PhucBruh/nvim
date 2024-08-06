@@ -9,11 +9,12 @@ local logo = [[
  ░ ░░   ░ ▒░   ░ ░  ░    ░ ▒ ▒░      ░ ░░     ▒   ░░  ░      ░
     ░   ░  ░     ░   ░   ░ ░ ▒         ░░     ▒   ░░       ░
           ░      ░  ░      ░ ░          ░     ░           ░
-                                       ░                       ]]
+                                       ░
+]]
 
 dashboard.section.header.val = vim.split(logo, "\n")
 -- stylua: ignore
-dashboard.section.buttons.val = { }
+dashboard.section.buttons.val = {}
 dashboard.section.header.opts.hl = "AlphaHeader"
 dashboard.section.footer.opts.hl = "AlphaFooter"
 dashboard.opts.layout[1].val = 8

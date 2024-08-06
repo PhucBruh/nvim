@@ -23,6 +23,9 @@ local opts = {
   presets = {
     lsp_doc_border = true,
   },
+  commands = {
+    enabled = false, -- Disable command output
+  },
 }
 
 require("noice").setup(opts)

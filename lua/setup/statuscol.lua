@@ -40,8 +40,8 @@ require("statuscol").setup {
       sign = {
         name = { ".*" },
         namespace = { ".*" },
-        maxwidth = 1,
-        colwidth = 2,
+        maxwidth = 2,
+        colwidth = 1,
         auto = false,
         wrap = true,
       },
@@ -49,7 +49,8 @@ require("statuscol").setup {
 
     {
       text = { builtin.lnumfunc, " " },
-      colwidth = 1,
+      maxwidth = 3,
+      colwidth = 3,
       click = "v:lua.ScLa",
     },
 

@@ -3,11 +3,13 @@ local opt = vim.opt
 -- Left column and similar settings
 opt.number = true -- display line numbers
 opt.relativenumber = true -- display relative line numbers
-opt.numberwidth = 2 -- set width of line number column
 opt.wrap = false -- display lines as single line
 opt.scrolloff = 10 -- number of lines to keep above/below cursor
 opt.sidescrolloff = 8 -- number of columns to keep to the left/right of cursor
-
+opt.fillchars:append {
+  vert = "▏",
+  horiz = "▁",
+}
 -- Tab spacing/behavior
 opt.expandtab = true -- convert tabs to spaces
 opt.shiftwidth = 2 -- number of spaces inserted for each indentation level
@@ -20,7 +22,7 @@ opt.breakindent = true -- enable line breaking indentation
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 opt.backup = false -- disable backup file creation
-opt.clipboard = "unnamedplus" -- enable system clipboard access
+vim.schedule(function() opt.clipboard = "unnamedplus" end)
 opt.conceallevel = 0 -- so that `` is visible in markdown files
 opt.mouse = "a" -- enable mouse support
 opt.showmode = false -- hide mode display

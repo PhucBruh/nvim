@@ -2,6 +2,7 @@ local opts = {
   ensure_installed = {
     "stylua",
     "jq",
+    "prettierd",
   },
 }
 

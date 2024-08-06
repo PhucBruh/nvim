@@ -1,15 +1,15 @@
 return {
 
-  ---@Plug-editor-hop
-  -- Search and jump engine in buffer
+  ---@Plug-editor-hop Fast and efficient search and jump engine within buffers
+  -- Allows quick navigation and search using a hop-based approach
   {
     "phaazon/hop.nvim",
     branch = "v2", -- optional but strongly recommended
     config = function() require("hop").setup {} end,
   },
 
-  ---@Plug-editor-telescope
-  -- fuzzy finder over lists for neovim
+  ---@Plug-editor-telescope Fuzzy finder for Neovim
+  -- Provides a powerful and customizable fuzzy finding interface for lists and files
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
@@ -18,15 +18,16 @@ return {
     },
   },
 
-  ---@Plug-editor-autopairs
-  -- auto pairs
+  ---@Plug-editor-autopairs Automatic pairing of characters
+  -- Automatically handles pairing of parentheses, brackets, quotes, etc.
   {
     "windwp/nvim-autopairs",
     event = { "InsertEnter", "CmdlineEnter" },
     config = true,
   },
 
-  ---@Plug-editor-complete
+  ---@Plug-editor-complete Autocompletion plugin for Neovim
+  -- Provides completion suggestions for various sources, enhanced with snippets
   {
     "hrsh7th/nvim-cmp", -- Completion plugin
     event = { "InsertEnter", "CmdlineEnter" },
@@ -41,27 +42,27 @@ return {
       "L3MON4D3/LuaSnip",
       "rafamadriz/friendly-snippets",
 
-      "kristijanhusak/vim-dadbod-completion", -- For db support
-
       "onsails/lspkind.nvim", --Better look
     },
     config = function() require "setup.cmp" end,
   },
 
-  ---@Plug-editor-comment
+  ---@Plug-editor-comment Simplified commenting of code
+  -- Provides easy-to-use commenting functionality for various code types
   {
     "numToStr/Comment.nvim",
   },
 
-  ---@Plug-editor-comment
+  ---@Plug-editor-comment Highlight and manage TODO comments
+  -- Helps in managing and highlighting TODO comments in code
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
 
-  ---@Plug-editor-'nvim-ufo'
-  -- For folding stuff
+  ---@Plug-editor-'nvim-ufo' Enhanced folding for Neovim
+  -- Provides advanced code folding features for better code navigation
   {
     "kevinhwang91/nvim-ufo",
     event = "BufRead",
@@ -69,7 +70,8 @@ return {
     config = function() require "setup.ufo" end,
   },
 
-  ---@Plug-editor-'better-escape'
+  ---@Plug-editor-'better-escape' Improved escape sequences for insert mode
+  -- Enhances the escape behavior to improve efficiency and comfort
   {
     "max397574/better-escape.nvim",
     event = "VeryLazy",
@@ -80,5 +82,14 @@ return {
         i = { j = { k = "<Esc>", j = "<Esc>" } },
       },
     },
+  },
+
+  ---@Plug-editor-'nvim-surround' Easily manage surrounding characters
+  -- Provides functions for adding, changing, and deleting surrounding characters
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function() require("nvim-surround").setup {} end,
   },
 }

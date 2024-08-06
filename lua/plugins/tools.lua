@@ -25,16 +25,18 @@ return {
     config = function() require "setup.kulala" end,
   },
 
-  ---@Plug-tools-markdown
-  -- Markdown render and editor support
+  ---@Plug-tools-obsidian
+  -- Note taking
   {
-    "MeanderingProgrammer/markdown.nvim",
+    "epwalsh/obsidian.nvim",
     ft = "markdown",
-    main = "render-markdown",
-    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
     dependencies = {
+      -- The markdown work flow
       "jakewvincent/mkdnflow.nvim",
+
+      -- Better render markdown UI in neovim
+      "MeanderingProgrammer/render-markdown.nvim",
     },
-    config = function() require "setup.markdown" end,
+    config = function() require "setup.obsidian" end,
   },
 }

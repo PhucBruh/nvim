@@ -24,7 +24,7 @@ require("catppuccin").setup {
         TreesitterContextBottom = { sp = colors.overlay1, style = { "underline" } },
         WinSeparator = { fg = colors.surface1, style = { "bold" } },
 
-        AlphaHeader = { fg = colors.mauve, style = { "italic", "bold" } },
+        AlphaHeader = { fg = colors.blue, style = { "italic", "bold" } },
         AlphaFooter = { fg = colors.rosewater, style = {} },
       }
       for _, hl in ipairs { "Headline", "rainbow" } do

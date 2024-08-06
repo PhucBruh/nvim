@@ -19,14 +19,10 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = function() require "setup.nvim-tree" end,
-  },
-
-  ---@Plug-UI-'nvim-web-devicons'
-  -- more icons
-  {
-    "nvim-sree/nvim-web-devicons",
-    opts = function() require "setup.nvim-web-devicons" end,
+    config = function()
+      require "setup.nvim-web-devicons"
+      require "setup.nvim-tree"
+    end,
   },
 
   -- {

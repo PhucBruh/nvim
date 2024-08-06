@@ -10,21 +10,6 @@ return {
     config = function() require "setup.alpha" end,
   },
 
-  ---@Plug-UI-'nvim-tree'
-  -- file explorer
-  {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require "setup.nvim-web-devicons"
-      require "setup.nvim-tree"
-    end,
-  },
-
   -- {
   --   "nvim-zh/colorful-winsep.nvim",
   --   config = true,
@@ -45,7 +30,7 @@ return {
   -- status line
   {
     "nvim-lualine/lualine.nvim",
-    event = "BufRead",
+    event = { "BufRead", "WinLeave" },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "letieu/harpoon-lualine",

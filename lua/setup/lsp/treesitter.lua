@@ -18,6 +18,7 @@ local configs = {
     "toml",
     "vim",
     "vimdoc",
+    "latex",
   },
   sync_install = false,
   highlight = { enable = true },

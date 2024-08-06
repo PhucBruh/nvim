@@ -8,6 +8,22 @@ return {
     config = function() require("hop").setup {} end,
   },
 
+  ---@Plug-editor-file-explorer
+  -- file explorer
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus", "Oil" },
+    dependencies = {
+      "stevearc/oil.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require "setup.nvim-web-devicons"
+      require "setup.explorer"
+    end,
+  },
+
   ---@Plug-editor-telescope Fuzzy finder for Neovim
   -- Provides a powerful and customizable fuzzy finding interface for lists and files
   {

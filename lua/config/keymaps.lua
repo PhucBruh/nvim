@@ -1,5 +1,9 @@
 local map = vim.keymap.set
 
+---@Key-General
+map("n", "<C-d>", "<C-d>zz", { desc = "Center cursor after moving down half-page" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Center cursor after moving up half-page" })
+
 ---@Key-HighLightSearch
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
@@ -8,7 +12,6 @@ map("n", "<leader>w", ":w<CR>", { desc = "Save" })
 
 ---@Key-find
 local builtin = require "telescope.builtin"
-local telescope = require "telescope"
 local function find_config()
   builtin.find_files {
     prompt_title = "Config Files",
@@ -40,5 +43,6 @@ map("n", "gd", vim.lsp.buf.definition, { expr = true, desc = "Show the definitio
 map("n", "gD", vim.lsp.buf.declaration, { expr = true, desc = "Declaration of current symbol" })
 
 ---@Key-Nvimtree
-vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Nvimtree toggle window" })
-vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { desc = "Nvimtree focus window" })
+vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree toggle window" })
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree focus window" })
+vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Oil" })

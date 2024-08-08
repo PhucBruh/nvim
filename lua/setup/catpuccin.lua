@@ -22,10 +22,16 @@ require("catppuccin").setup {
         MsgArea = { fg = colors.overlay1 },
         Search = { bg = colors.mauve, fg = colors.base },
         TreesitterContextBottom = { sp = colors.overlay1, style = { "underline" } },
-        WinSeparator = { fg = colors.surface1, style = { "bold" } },
+        WinSeparator = { fg = colors.overlay0, style = { "bold" } },
 
         AlphaHeader = { fg = colors.blue, style = { "italic", "bold" } },
         AlphaFooter = { fg = colors.rosewater, style = {} },
+
+        NvimTreeNormal = { bg = colors.base },
+        NvimTreeWinSeparator = {
+          fg = colors.overlay0,
+          bg = colors.base,
+        },
       }
       for _, hl in ipairs { "Headline", "rainbow" } do
         for i, c in ipairs { "blue", "pink", "lavender", "green", "peach", "flamingo" } do
@@ -58,7 +64,7 @@ require("catppuccin").setup {
       overlay1 = "#676B80",
       overlay0 = "#6c7a93",
       surface2 = "#3A3D4A",
-      surface1 = "#2F313D",
+      surface1 = "#4A5C6B",
       surface0 = "#1D1E29",
       base = "#0b0b12",
       mantle = "#11111a",
@@ -79,5 +85,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function() vim.highlight.on_yank { higroup = "YankHighlight", timeout = 150 } end,
 })
-
-vim.api.nvim_set_hl(0, "Visual", { bg = "#4a5c6b" })

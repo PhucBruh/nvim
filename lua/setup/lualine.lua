@@ -67,6 +67,7 @@ local function mode_icon()
     t = " ", -- Terminal mode
     s = "󰩐 ",
   }
+
   return icons[mode] or " " -- Default icon
 end
 
@@ -99,9 +100,9 @@ require("lualine").setup {
     },
     lualine_b = {},
     lualine_c = {
+      "harpoon2",
       {
         "filename",
-        path = 1,
         status = true,
       },
       filetype,

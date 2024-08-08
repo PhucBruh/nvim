@@ -6,10 +6,7 @@ opt.relativenumber = true -- display relative line numbers
 opt.wrap = false -- display lines as single line
 opt.scrolloff = 10 -- number of lines to keep above/below cursor
 opt.sidescrolloff = 8 -- number of columns to keep to the left/right of cursor
-opt.fillchars:append {
-  vert = "▏",
-  horiz = "▁",
-}
+
 -- Tab spacing/behavior
 opt.expandtab = true -- convert tabs to spaces
 opt.shiftwidth = 2 -- number of spaces inserted for each indentation level

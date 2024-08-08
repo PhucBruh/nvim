@@ -36,6 +36,8 @@ return {
     config = function() require "setup.lualine" end,
   },
 
+  ---@Plug-UI-anyline
+  -- indent line
   {
     "huy-hng/anyline.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -44,6 +46,14 @@ return {
     opts = {
       animation = "none",
     },
+  },
+
+  ---@Plug-UI-anyline'colorful-winsep'
+  -- indent line
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinLeave" },
   },
 
   ---@Plug-UI-statuscol

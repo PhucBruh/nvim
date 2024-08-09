@@ -19,9 +19,14 @@ require("statuscol").setup {
     Lnum = builtin.gitsigns_click,
   },
 
-  bt_ignore = {
-    "nofile",
+  ft_ignore = {
+    "alpha",
+    "dbui",
+    "dbout",
+    "dbee",
     "NvimTree",
+  },
+  bt_ignore = {
     "terminal",
   },
   segments = {

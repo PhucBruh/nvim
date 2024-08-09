@@ -3,6 +3,9 @@ local opts = {
     "stylua",
     "jq",
     "prettierd",
+    "xmlint",
+    "google-java-format",
+    "sql-formatter",
   },
 }
 

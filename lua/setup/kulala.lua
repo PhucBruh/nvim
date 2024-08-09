@@ -14,6 +14,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-kulala.setup {}
+map("n", "<leader>rf", kulala.search, { noremap = true, desc = "Search .rest and .http" })
+map("n", "<leader>ry", kulala.copy, { noremap = true, desc = "Previous request" })
+
+kulala.setup {
+  formatters = {
+    json = { "jq", "." },
+    xml = { "xmllint", "--format", "-" },
+    html = { "xmllint", "--format", "--html", "-" },
+  },
+}
 
 -- require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets" } }

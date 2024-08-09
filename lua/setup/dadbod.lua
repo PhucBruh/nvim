@@ -18,12 +18,26 @@ vim.g.db_ui_debug = 1
 
 -- Disable some ui in DBUI
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "dbui",
+  pattern = { "dbui", "dbout" },
   callback = function()
-    vim.wo.foldenable = false
-    vim.wo.foldcolumn = "0"
     vim.wo.winbar = nil
     vim.wo.number = false
+    vim.o.foldenable = false
+    vim.o.foldcolumn = "0"
+  end,
+})
+
+-- Dadbob completion for db
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "sql", "mysql", "plsql" },
+  callback = function()
+    require("cmp").setup.buffer {
+      sources = {
+        { name = "vim-dadbod-completion" },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+      },
+    }
   end,
 })
 

@@ -48,14 +48,6 @@ return {
     },
   },
 
-  ---@Plug-UI-anyline'colorful-winsep'
-  -- indent line
-  {
-    "nvim-zh/colorful-winsep.nvim",
-    config = true,
-    event = { "WinLeave" },
-  },
-
   ---@Plug-UI-statuscol
   {
     "lewis6991/gitsigns.nvim",

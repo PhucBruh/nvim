@@ -19,6 +19,7 @@ local configs = {
     "vim",
     "vimdoc",
     "latex",
+    "go",
   },
   sync_install = false,
   highlight = { enable = true },
@@ -27,3 +28,9 @@ local configs = {
 }
 
 require("nvim-treesitter.configs").setup(configs)
+
+vim.filetype.add {
+  extension = {
+    ["http"] = "http",
+  },
+}

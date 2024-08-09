@@ -9,3 +9,9 @@ lspconfig.lua_ls.setup {
     },
   },
 }
+
+lspconfig.gopls.setup {}
+lspconfig.jqls.setup {}
+lspconfig.sqlls.setup {
+  filetypes = { "sql", "mysql" },
+}

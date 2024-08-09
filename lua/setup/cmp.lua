@@ -32,7 +32,7 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
-    ["<C-y>"] = cmp.mapping.confirm { select = true },
+    ["<C-j>"] = cmp.mapping.confirm { select = true },
 
     ["<CR>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -80,18 +80,6 @@ cmp.setup {
     documentation = cmp.config.window.bordered(), -- Add border to documentation window
   },
 }
-
--- Dadbob completion for db
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "sql", "mysql", "plsql" },
-  callback = function()
-    cmp.setup.buffer {
-      sources = {
-        { name = "vim-dadbod-completion" },
-      },
-    }
-  end,
-})
 
 -- Cmdline setup
 cmp.setup.cmdline("/", {

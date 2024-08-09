@@ -18,10 +18,7 @@ return {
       "stevearc/oil.nvim",
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require "setup.nvim-web-devicons"
-      require "setup.explorer"
-    end,
+    config = function() require "setup.explorer" end,
   },
 
   ---@Plug-editor-telescope Fuzzy finder for Neovim

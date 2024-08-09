@@ -5,7 +5,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    config = function() require "setup.lsp.treesitter" end,
+    config = function() require "setup.lang.treesitter" end,
   },
 
   ---@Plug-lang-'mason' for managing LSP servers, formatters, and linters
@@ -31,29 +31,45 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
-    config = function() require "setup.lsp.mason-lspconfig" end,
+    config = function() require "setup.lang.mason-lspconfig" end,
   },
 
   -- Manages formatters and linters using Mason
   -- Integrates with `null-ls` for additional tooling
   {
     "jay-babu/mason-null-ls.nvim",
-    dependencies = { "williamboman/mason.nvim", "nvimtools/none-ls.nvim" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "nvimtools/none-ls.nvim",
+    },
     event = { "BufReadPre", "BufNewFile" },
-    config = function() require "setup.lsp.mason-null-ls" end,
+    config = function() require "setup.lang.mason-null-ls" end,
   },
 
   -- Configures LSP clients and server settings
   -- Essential setup for LSP server configuration
   {
     "neovim/nvim-lspconfig",
-    config = function() require "setup.lsp.lspconfig" end,
+    config = function() require "setup.lang.lspconfig" end,
   },
 
   ---@Plug-lang-conform for formatting and linting
   -- Provides configuration for formatters and linters
   {
     "stevearc/conform.nvim",
-    config = function() require "setup.lsp.conform" end,
+    config = function() require "setup.lang.conform" end,
+  },
+
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function() require("go").setup() end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
 }

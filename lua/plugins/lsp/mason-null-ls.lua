@@ -1,7 +1,18 @@
 return {
-  "williamboman/mason-lspconfig.nvim",
-  dependencies = { "williamboman/mason.nvim" },
-  config = function()
-    require("setup.lang.mason-lspconfig")
-  end,
+  "jay-babu/mason-null-ls.nvim",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "nvimtools/none-ls.nvim",
+  },
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {
+    ensure_installed = {
+      "stylua",
+      "jq",
+      "prettierd",
+      "xmlint",
+      "google-java-format",
+      "sql-formatter",
+    },
+  },
 }

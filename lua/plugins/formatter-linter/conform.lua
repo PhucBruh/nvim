@@ -1,1 +1,22 @@
-return {}
+return {
+  "stevearc/conform.nvim",
+  opts = {
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_format = "fallback",
+    },
+
+    formatters_by_ft = {
+      lua = { "stylua" },
+      json = { "jq" },
+      markdown = { "prettierd" },
+      hmtl = { "prettierd" },
+      xml = { "prettierd" },
+      graphql = { "prettierd" },
+      java = { "google-java-format" },
+    },
+  },
+  config = function()
+    require("setup.lang.conform")
+  end,
+}

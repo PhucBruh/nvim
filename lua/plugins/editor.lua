@@ -16,7 +16,6 @@ return {
     cmd = { "NvimTreeToggle", "NvimTreeFocus", "Oil" },
     dependencies = {
       "stevearc/oil.nvim",
-      "nvim-tree/nvim-web-devicons",
     },
     config = function() require "setup.explorer" end,
   },

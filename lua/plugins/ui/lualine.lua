@@ -1,4 +1,31 @@
-local colors = require("catppuccin.palettes").get_palette("macchiato")
+local colors = {
+  rosewater = "#F5B8AB",
+  flamingo = "#F29D9D",
+  pink = "#AD6FF7",
+  mauve = "#FF8F40",
+  red = "#E66767",
+  maroon = "#EB788B",
+  peach = "#FAB770",
+  yellow = "#FACA64",
+  green = "#70CF67",
+  teal = "#4CD4BD",
+  sky = "#61BDFF",
+  sapphire = "#4BA8FA",
+  blue = "#00BFFF",
+  lavender = "#00BBCC",
+  text = "#C1C9E6",
+  subtext1 = "#A3AAC2",
+  subtext0 = "#8E94AB",
+  overlay2 = "#7D8296",
+  overlay1 = "#676B80",
+  overlay0 = "#6c7a93",
+  surface2 = "#3A3D4A",
+  surface1 = "#4A5C6B",
+  surface0 = "#1D1E29",
+  base = "#0b0b12",
+  mantle = "#11111a",
+  crust = "#191926",
+}
 
 local theme = {
   normal = {
@@ -44,9 +71,9 @@ local diff = {
   colored = true, -- Displays a colored diff status if set to true
   diff_color = {
     -- Same color values as the general color option can be used here.
-    added = "LuaLineDiffAdd", -- Changes the diff's added color
-    modified = "LuaLineDiffChange", -- Changes the diff's modified color
-    removed = "LuaLineDiffDelete", -- Changes the diff's removed color you
+    added = "LuaLineDiffAdd",                               -- Changes the diff's added color
+    modified = "LuaLineDiffChange",                         -- Changes the diff's modified color
+    removed = "LuaLineDiffDelete",                          -- Changes the diff's removed color you
   },
   symbols = { added = "+", modified = "~", removed = "-" }, -- Changes the symbols used by the diff.
 }

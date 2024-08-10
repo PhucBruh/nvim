@@ -9,9 +9,7 @@ return {
         tools = {},
         -- LSP configuration
         server = {
-          on_attach = function(client, bufnr)
-            require("nvim-navic").attach(client, bufnr)
-          end,
+          on_attach = function(client, bufnr) end,
           default_settings = {
             -- rust-analyzer language server configuration
             ["rust-analyzer"] = {},
@@ -26,7 +24,14 @@ return {
     "saecki/crates.nvim",
     tag = "stable",
     config = function()
-      require("crates").setup()
+      require("crates").setup({})
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "sql", "mysql", "plsql" },
+        callback = function()
+          require("cmp").setup.buffer({ sources = { { name = "crates" } } })
+        end,
+      })
     end,
   },
 }

@@ -62,4 +62,4 @@ require("lazy").setup({
 
 require("config.options")
 require("config.keymaps")
-vim.o.laststatus = 0
+require("config.post-option")

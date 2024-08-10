@@ -12,6 +12,12 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+-- Move to window using the <alt> hjkl keys
+-- map("n", "<M-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+-- map("n", "<M-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+-- map("n", "<M-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+-- map("n", "<M-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })

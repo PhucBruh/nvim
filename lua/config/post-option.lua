@@ -1,7 +1,17 @@
 vim.o.laststatus = 0
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "dbui", "dbout" },
+  pattern = {
+    "dbui",
+    "dbout",
+
+    "dapui_watches",
+    "dapui_stacks",
+    "dapui_breakpoints",
+    "dapui_scopes",
+    "dap-repl",
+    "dapui_console",
+  },
   callback = function()
     vim.wo.winbar = nil
     vim.wo.number = false

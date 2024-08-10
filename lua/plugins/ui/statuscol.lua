@@ -19,6 +19,13 @@ return {
         "dbout",
         "lazy",
         "NvimTree",
+
+        "dapui_watches",
+        "dapui_stacks",
+        "dapui_breakpoints",
+        "dapui_scopes",
+        "dap-repl",
+        "dapui_console",
       },
       bt_ignore = {
         "terminal",

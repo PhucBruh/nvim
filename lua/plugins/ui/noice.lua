@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    "j-hui/fidget.nvim",
   },
   opts = {
     lsp = {

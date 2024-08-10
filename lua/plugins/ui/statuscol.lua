@@ -13,9 +13,11 @@ return {
 
       ft_ignore = {
         "alpha",
+        "aerial",
         "dbui",
         "dbee",
         "dbout",
+        "lazy",
         "NvimTree",
       },
       bt_ignore = {

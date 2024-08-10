@@ -22,7 +22,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins.ui" },
     { import = "plugins.lsp" },
-    { import = "plugins.lang-tools" },
+    { import = "plugins.formatter-linter" },
     { import = "plugins.lang-tools" },
     { import = "plugins.editor" },
   },
@@ -62,3 +62,4 @@ require("lazy").setup({
 
 require("config.options")
 require("config.keymaps")
+vim.o.laststatus = 0

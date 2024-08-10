@@ -1,10 +1,9 @@
+vim.keymap.set({ "n", "i" }, "<C-o>", "<cmd>Oil<CR>", { desc = "Oil" })
+
 return {
-  "nvim-tree/nvim-tree.lua",
+  "stevearc/oil.nvim",
   version = "*",
-  cmd = { "NvimTreeToggle", "NvimTreeFocus", "Oil" },
-  dependencies = {
-    "stevearc/oil.nvim",
-  },
+  cmd = { "Oil" },
   opts = {
     keymaps = {
       ["g?"] = "actions.show_help",

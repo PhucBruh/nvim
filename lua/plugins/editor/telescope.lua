@@ -5,7 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
   },
   config = function()
-    local map = vim.keymap.map
+    local map = vim.keymap.set
     local builtin = require("telescope.builtin")
     local function find_config()
       builtin.find_files({
@@ -28,6 +28,6 @@ return {
     map("n", "<leader>fo", builtin.oldfiles, { desc = "Find recent files" })
     map("n", "<leader>ft", find_themes, { desc = "Find themes" })
     map("n", "<leader>f/", builtin.current_buffer_fuzzy_find, { desc = "Find words in current buffer" })
-    map("n", "<leader>fn", require("telescope").extensions.notify.notify, { desc = "Find notification" })
+    map("n", "<leader>fn", "<cmd>Noice telescope<CR>", { desc = "Find notification" })
   end,
 }

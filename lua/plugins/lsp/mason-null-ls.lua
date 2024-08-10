@@ -12,7 +12,6 @@ return {
       "prettierd",
       "xmlint",
       "google-java-format",
-      "sql-formatter",
     },
   },
 }

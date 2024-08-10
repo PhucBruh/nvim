@@ -5,7 +5,6 @@ return {
       timeout_ms = 500,
       lsp_format = "fallback",
     },
-
     formatters_by_ft = {
       lua = { "stylua" },
       json = { "jq" },
@@ -16,7 +15,4 @@ return {
       java = { "google-java-format" },
     },
   },
-  config = function()
-    require("setup.lang.conform")
-  end,
 }

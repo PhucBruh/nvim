@@ -6,7 +6,7 @@ return {
       "lua_ls",
       "gopls",
       "jqls",
-      "sqlls",
+      "taplo",
     },
   },
 }

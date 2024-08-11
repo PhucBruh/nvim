@@ -22,6 +22,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins.ui" },
     { import = "plugins.lsp" },
+    { import = "plugins.debug" },
     { import = "plugins.formatter-linter" },
     { import = "plugins.lang-tools" },
     { import = "plugins.editor" },

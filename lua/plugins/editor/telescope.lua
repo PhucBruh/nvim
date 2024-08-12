@@ -7,18 +7,14 @@ return {
   config = function()
     local map = vim.keymap.set
     local builtin = require("telescope.builtin")
-    local function find_config()
+
+    map("n", "<leader>fa", function()
       builtin.find_files({
         prompt_title = "Config Files",
         cwd = vim.fn.stdpath("config"),
         follow = true,
       })
-    end
-    local function find_themes()
-      builtin.colorscheme({ enable_preview = true, ignore_builtins = true })
-    end
-
-    map("n", "<leader>fa", find_config, { desc = "Find config file" })
+    end, { desc = "Find config file" })
     map("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
     map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
     map("n", "<leader>fc", builtin.grep_string, { desc = "Find word under cursor" })
@@ -26,7 +22,10 @@ return {
     map("n", "<leader>fw", builtin.live_grep, { desc = "Find words" })
     map("n", "<leader>fd", builtin.diagnostics, { desc = "Find diagnostics" })
     map("n", "<leader>fo", builtin.oldfiles, { desc = "Find recent files" })
-    map("n", "<leader>ft", find_themes, { desc = "Find themes" })
+    map("n", "<leader>fk", builtin.keymaps, { desc = "Find recent files" })
+    map("n", "<leader>ft", function()
+      builtin.colorscheme({ enable_preview = true, ignore_builtins = true })
+    end, { desc = "Find themes" })
     map("n", "<leader>f/", builtin.current_buffer_fuzzy_find, { desc = "Find words in current buffer" })
     map("n", "<leader>fn", "<cmd>Noice telescope<CR>", { desc = "Find notification" })
   end,

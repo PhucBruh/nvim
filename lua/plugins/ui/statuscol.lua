@@ -47,7 +47,7 @@ return {
             name = { ".*" },
             namespace = { ".*" },
             maxwidth = 2,
-            colwidth = 1,
+            colwidth = 2,
             auto = false,
             wrap = true,
           },

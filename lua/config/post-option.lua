@@ -2,9 +2,11 @@ vim.o.laststatus = 0
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
+    -- for dbui
     "dbui",
     "dbout",
 
+    -- for dapui
     "dapui_watches",
     "dapui_stacks",
     "dapui_breakpoints",

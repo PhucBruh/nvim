@@ -6,6 +6,7 @@ opt.relativenumber = true -- display relative line numbers
 opt.wrap = false -- display lines as single line
 opt.scrolloff = 10 -- number of lines to keep above/below cursor
 opt.sidescrolloff = 8 -- number of columns to keep to the left/right of cursor
+vim.diagnostic.config({ signs = false })
 
 -- Tab spacing/behavior
 opt.expandtab = true -- convert tabs to spaces

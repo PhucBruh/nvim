@@ -75,3 +75,7 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+
+-- better create line up or down (..may be)
+map("n", "<CR>", "o<Esc>")
+map("n", "<S-CR>", "O<Esc>")

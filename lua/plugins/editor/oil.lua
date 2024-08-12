@@ -1,9 +1,10 @@
-vim.keymap.set({ "n", "i" }, "<C-o>", "<cmd>Oil<CR>", { desc = "Oil" })
-
 return {
   "stevearc/oil.nvim",
   version = "*",
   cmd = { "Oil" },
+  keys = {
+    { "<C-o>", mode = { "n", "i" }, "<cmd>Oil<CR>", desc = "Oil" },
+  },
   opts = {
     keymaps = {
       ["g?"] = "actions.show_help",

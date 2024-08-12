@@ -32,6 +32,8 @@ require("catppuccin").setup({
           fg = colors.overlay0,
           bg = colors.base,
         },
+
+        TelescopeMatching = { fg = colors.mauve },
       }
       for _, hl in ipairs({ "Headline", "rainbow" }) do
         for i, c in ipairs({ "blue", "pink", "lavender", "green", "peach", "flamingo" }) do

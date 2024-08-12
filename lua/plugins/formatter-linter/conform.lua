@@ -5,6 +5,7 @@ return {
       timeout_ms = 500,
       lsp_format = "fallback",
     },
+
     formatters_by_ft = {
       lua = { "stylua" },
       json = { "jq" },
@@ -14,6 +15,7 @@ return {
       graphql = { "prettierd" },
       java = { "google-java-format" },
       python = { "ruff" },
+      go = { "goimports" },
     },
   },
 }

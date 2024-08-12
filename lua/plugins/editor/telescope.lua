@@ -7,6 +7,7 @@ return {
   config = function()
     local map = vim.keymap.set
     local builtin = require("telescope.builtin")
+    local actions = require("telescope.actions")
 
     -- Normal telescope find
     map("n", "<leader>fa", function()
@@ -51,5 +52,30 @@ return {
     map("n", "<leader>gt", function()
       builtin.git_status({ use_file_path = true })
     end, { desc = "Status" })
+
+    require("telescope").setup({
+      defaults = {
+        path_display = { "truncate" },
+        sorting_strategy = "ascending",
+        layout_config = {
+          horizontal = { prompt_position = "top", preview_width = 0.55 },
+          vertical = { mirror = false },
+          width = 0.87,
+          height = 0.80,
+          preview_cutoff = 120,
+        },
+        mappings = {
+          i = {
+            -- ["<C-J>"] = actions.move_selection_next,
+            -- ["<C-K>"] = actions.move_selection_previous,
+            ["<C-j>"] = actions.select_default,
+          },
+          n = {
+            q = actions.close,
+            ["<C-j>"] = actions.select_default,
+          },
+        },
+      },
+    })
   end,
 }

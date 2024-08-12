@@ -7,12 +7,24 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     ensure_installed = {
+      -- lua
       "stylua",
+
+      -- json
       "jq",
       "prettierd",
+
+      -- xml lint
       "xmlint",
-      "google-java-format",
+
+      -- python
       "ruff",
+
+      -- Java
+      "google-java-format",
+
+      -- Go
+      "goimports",
     },
   },
 }

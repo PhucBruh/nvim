@@ -16,17 +16,20 @@ return {
       -- online, please don't ask me how to install them :)
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
+        "debugpy",
       },
     },
     -- mason-nvim-dap is loaded when nvim-dap loads
     config = function() end,
   },
+
   {
     "mfussenegger/nvim-dap",
     recommended = true,
     desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
     dependencies = {
+      "nvim-neotest/nvim-nio",
       "rcarriga/nvim-dap-ui",
       -- virtual text for the debugger
       {
@@ -37,31 +40,29 @@ return {
 
   -- stylua: ignore
     keys = {
-      { "<leader>d", "", desc = "+debug", mode = {"n", "v"} },
-      { "<leader>db", function() require("dap").set_breakpoint(vim.fn.input('breakpoint condition: ')) end, desc = "breakpoint condition" },
-      { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "toggle breakpoint" },
-      { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
-      -- { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
-      { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-      { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
-      { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
-      { "<leader>dj", function() require("dap").down() end, desc = "Down" },
-      { "<leader>dk", function() require("dap").up() end, desc = "Up" },
-      { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-      { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-      { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
-      { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
-      { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-      { "<leader>ds", function() require("dap").session() end, desc = "Session" },
-      { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-      { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+      { "<leader>dc", require("dap").continue, desc = "Start/Continue" },
+      { "<leader>dp", require("dap").pause , desc = "Pause" },
+      { "<leader>dr", require("dap").restart , desc = "Restart" },
+      { "<leader>dp", require("dap").pause , desc = "Pause" },
+      { "<leader>ds", require("dap").run_to_cursor , desc = "Run Debugger to Cursor" },
+      { "<leader>dq", require("dap").close , desc = "Close Debugger Session" },
+      { "<leader>dQ", require("dap").terminate , desc = "Terminate" },
+      { "<leader>db", require("dap").toggle_breakpoint , desc = "Toggle Breakpoint" },
+      { "<leader>dB", require("dap").clear_breakpoints , desc = "Clear Breakpoints" },
+      { "<leader>do", require("dap").step_over , desc = "Step Over" },
+      { "<leader>di", require("dap").step_into , desc = "Step Into" },
+      { "<leader>dO", require("dap").step_out , desc = "Step Out" },
+      { "<leader>dj", require("dap").down , desc = "Step Down" },
+      { "<leader>dk", require("dap").up , desc = "Step Up" },
+      { "<leader>dh", require("dap.ui.widgets").hover, desc = "Debugger Hover" },
     },
     config = function()
       local sign = vim.fn.sign_define
-      sign("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
+      sign("DapBreakpoint", { text = "" })
       sign("DapBreakpointCondition", { text = "", texthl = "", linehl = "", numhl = "" })
       sign("DapLogPoint", { text = "󰁕", texthl = "", linehl = "", numhl = "" })
-      sign("DapStopped", { text = "󰛿", texthl = "", linehl = "", numhl = "" })
+      -- sign("DapStopped", { text = "󰛿", texthl = "", linehl = "", numhl = "" })
+      sign("DapStopped", { text = "󰁕", texthl = "", linehl = "", numhl = "" })
       sign("DapBreakpointRejected", { text = "", texthl = "", linehl = "", numhl = "" })
     end,
   },

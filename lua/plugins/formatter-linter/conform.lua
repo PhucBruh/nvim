@@ -13,6 +13,7 @@ return {
       xml = { "prettierd" },
       graphql = { "prettierd" },
       java = { "google-java-format" },
+      python = { "ruff" },
     },
   },
 }

@@ -21,6 +21,7 @@ return {
         "NvimTree",
 
         "dapui_watches",
+        "dapui_scopes",
         "dapui_stacks",
         "dapui_breakpoints",
         "dapui_scopes",

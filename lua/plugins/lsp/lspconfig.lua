@@ -18,5 +18,7 @@ return {
     lspconfig.jqls.setup({})
 
     lspconfig.taplo.setup({})
+
+    lspconfig.basedpyright.setup({})
   end,
 }

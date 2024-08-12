@@ -12,6 +12,7 @@ return {
       "prettierd",
       "xmlint",
       "google-java-format",
+      "ruff",
     },
   },
 }

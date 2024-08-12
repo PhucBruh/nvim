@@ -13,6 +13,7 @@ map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window W
 map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Move to window using the <alt> hjkl keys
+-- Look at the tmux navigation plugin
 -- map("n", "<M-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 -- map("n", "<M-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 -- map("n", "<M-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
@@ -26,6 +27,7 @@ map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+map("n", "<leader>x", ":bd<cr>", { desc = "Close buffer" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<C-c>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })

@@ -7,6 +7,7 @@ return {
       "gopls",
       "jqls",
       "taplo",
+      "basedpyright",
     },
   },
 }

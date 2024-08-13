@@ -15,4 +15,7 @@ return {
       desc = "Buffer Local Keymaps (which-key)",
     },
   },
+  config = function()
+    require("plugins.ui.which-key.setup")
+  end,
 }

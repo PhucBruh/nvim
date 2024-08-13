@@ -13,7 +13,6 @@ return {
       hmtl = { "prettierd" },
       xml = { "prettierd" },
       graphql = { "prettierd" },
-      java = { "google-java-format" },
       python = { "ruff" },
       go = { "goimports" },
     },
